@@ -29,19 +29,31 @@ public:
 	{
 		cout << "X: " << x << "\nY: " << y << endl << endl;
 	}
-	Point operator++(int)
+	Point& operator++(int)
 	{
 		this->x = this->x + 1;
 		this->y = this->y + 1;
 		return *this;
 	}
-	Point operator--(int)
+	Point& operator++()
+	{
+		this->x = this->x + 1;
+		this->y = this->y + 1;
+		return *this;
+	}
+	Point& operator--(int)
 	{
 		this->x = this->x - 1;
 		this->y = this->y - 1;
 		return *this;
 	}
-	Point operator!()
+	Point& operator--()
+	{
+		this->x = this->x - 1;
+		this->y = this->y - 1;
+		return *this;
+	}
+	Point& operator!()
 	{
 		this->x = this->x * (-1);
 		this->y = this->y * (-1);
@@ -150,8 +162,8 @@ int main()
 {
 	Point p1(5, 5);
 	Point p2(7, 2);
-	cout << operator>(p1, p2) << endl;
-	cout << operator<(p1, p2) << endl;
+	cout << (p1 > p2) << endl;
+	cout << (p1 < p2) << endl;
 	p1.Print();
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	Vector f;
