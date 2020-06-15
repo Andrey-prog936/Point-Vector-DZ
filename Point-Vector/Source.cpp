@@ -79,7 +79,7 @@ public:
 	Vector()
 	{
 		size = 0;
-		arr = new Point[size];
+		arr = nullptr;
 	}
 	Vector(const Vector& tmp)
 	{
